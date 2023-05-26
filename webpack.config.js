@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");;
 
 /*We are basically telling webpack to take index.js from entry. Then check for all file extensions in resolve. 
 After that apply all the rules in module.rules and produce the output and place it in main.js in the public folder.*/
@@ -12,7 +13,7 @@ module.exports = {
   /** "entry"
    * the entry point
    */
-  entry: "./index.js",
+  entry: path.resolve(__dirname, "src/index.ts"),
   output: {
     /** "path"
      * the folder path of the output file
@@ -36,7 +37,7 @@ module.exports = {
     /** "static"
      * This property tells Webpack what static file it should serve
      */
-    static: ["./public"],
+    static: [path.resolve(__dirname, "public")],
     /** "open"
      * opens the browser after server is successfully started
      */
@@ -58,7 +59,7 @@ module.exports = {
      * resolve the one with the extension listed first in the array and skip the rest.
      * This is what enables users to leave off the extension when importing
      */
-    extensions: [".js", ".jsx", ".json"],
+    extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
   },
   module: {
     /** "rules"
@@ -69,10 +70,22 @@ module.exports = {
      */
     rules: [
       {
-        test: /\.(js|jsx)$/, //kind of file extension this rule should look for and apply in test
+        test: /\.(js|ts|tsx|jsx)$/, //kind of file extension this rule should look for and apply in test
         exclude: /node_modules/, //folder to be excluded
         use: "babel-loader", //loader which we are going to use
       },
+      {
+        test: /\.js$/,
+        use: "source-map-loader",
+        enforce: "pre",
+      },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "APP NAME HERE",
+      favicon: "./src/assets/favicon.ico",
+      template: "./src/template.html"
+    }),
+  ],
 };
