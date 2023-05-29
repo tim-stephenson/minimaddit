@@ -79,13 +79,17 @@ module.exports = {
         use: "source-map-loader",
         enforce: "pre",
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "APP NAME HERE",
       favicon: "./src/assets/favicon.ico",
-      template: "./src/template.html"
+      template: "./src/template.html",
     }),
   ],
 };

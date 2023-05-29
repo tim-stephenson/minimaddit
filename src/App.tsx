@@ -1,16 +1,15 @@
+import { useState } from "react";
+import Home from "./home/Home";
+import LoginSignUpPage from "./auth/LoginSignUpPage";
 
 export default function App()  {
-  return (
-    <div>
-      <NumberDisplay num={5} />
-      <div>"hi"</div>
-      <NumberDisplay num={5} />
-    </div>
+  const [loggedIn, setLoggedIn] = useState<boolean>(true);
+  return loggedIn ? (
+      <Home />
+  ):
+  (
+<LoginSignUpPage />
   );
 }
 
-function NumberDisplay({num = 0} : {num ?: Number}){
-    return (
-        <p>{`${num}`}</p>
-    );
-}
+
