@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Nav from "react-bootstrap/Nav";
+import DaylightMap from "./DaylightMap";
 
 
 const OPTIONS = ["Reddit", "Twitter"];
@@ -12,10 +13,15 @@ export default function Home({}: {}) {
   const [tab,setTab] = useState<String>(DEFAULT_OPTION);
   return (
     <>
-      <Nav variant="pills" className="justify-content-center" defaultActiveKey = {DEFAULT_OPTION}
-      onSelect={(eventKey, _) => setTab(eventKey as String) } >
+      <DaylightMap />
+      <Nav
+        variant="pills"
+        className="justify-content-center"
+        defaultActiveKey={DEFAULT_OPTION}
+        onSelect={(eventKey, _) => setTab(eventKey as String)}
+      >
         {OPTIONS.map((elem) => (
-          <Nav.Item>
+          <Nav.Item key={elem}>
             <Nav.Link eventKey={elem}>{elem}</Nav.Link>
           </Nav.Item>
         ))}
