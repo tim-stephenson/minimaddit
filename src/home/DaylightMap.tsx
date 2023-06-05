@@ -14,7 +14,15 @@
 
 
 export default function DaylightMap( {} : {}) {
-    return <img src={getDaylightMapURL()} ></img>;
+    return (
+
+        <img
+          src={getDaylightMapURL()}
+          width="600"
+          height="300"
+          style={{ marginLeft: "auto", marginRight: 0, display: "block" }}
+        />
+    );
 }
 
 

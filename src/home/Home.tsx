@@ -13,7 +13,7 @@ export default function Home({}: {}) {
   const [tab,setTab] = useState<String>(DEFAULT_OPTION);
   return (
     <>
-      <DaylightMap />
+        <DaylightMap />
       <Nav
         variant="pills"
         className="justify-content-center"
@@ -32,7 +32,7 @@ export default function Home({}: {}) {
           <Nav.Link eventKey="b">Option 2</Nav.Link>
         </Nav.Item>
       </Nav>
-      <div>Selected option: {tab}</div>
+      <>Selected option: {tab}</>
     </>
   );
 }
