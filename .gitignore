@@ -4,6 +4,8 @@
 /dist
 /tmp
 /out-tsc
+/public/index.html
+/public/main.js
 
 # Runtime data
 pids

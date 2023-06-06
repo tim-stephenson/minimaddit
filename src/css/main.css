@@ -1,0 +1,37 @@
+
+
+
+.infographic{
+    border-radius: 5px;
+    background-color: coral;
+    margin: 5px;
+}
+
+
+
+.top-bar-parent{
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+}
+
+.top-bar-child {
+  display: inline-block;
+  border: 1px solid red;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+
+
+body{
+    margin: 0; /* Remove default margin */
+}
+iframe{      
+    display: block;  /* iframes are inline by default */   
+    height: 12000px;  /* Set height to 100% of the viewport height */   
+    width: 100vw;  /* Set width to 100% of the viewport width */     
+    border: none; /* Remove default border */
+    background: lightyellow; /* Just for styling */
+    margin: auto;
+}

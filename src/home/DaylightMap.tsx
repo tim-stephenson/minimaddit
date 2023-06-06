@@ -15,7 +15,6 @@
 
 export default function DaylightMap( {} : {}) {
     return (
-
         <img
           src={getDaylightMapURL()}
           width="600"
