@@ -6,12 +6,14 @@ import Reddit from "./Reddit";
 import Twitter from "./Twitter";
 import WSJ from "./WSJ";
 import NewYorkTimes from "./NewYorkTimes";
+import QuantaMagazine from "./QuantaMagazine";
 
 const OPTIONS = {
   "Reddit" : Reddit,
   "Twitter" : Twitter,
   "WSJ" : WSJ,
-  "NYT" : NewYorkTimes
+  "NYT" : NewYorkTimes,
+  "Quanta Magazine" : QuantaMagazine
 }
 
 const DEFAULT_OPTION  = Object.keys(OPTIONS)[2] as keyof (typeof OPTIONS); 
