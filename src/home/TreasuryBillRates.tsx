@@ -30,7 +30,7 @@ export default function TreasuryBillRates({} : {}){
     return (
       <>
         <h2>Treasury Bills:</h2>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", flexDirection: "row", flexWrap : "wrap", alignItems : "center", justifyContent : "center" }}>
           <Infographic name="1 month" value={data?.BC_1MONTH + "%"} />
           <Infographic name="2 month" value={data?.BC_2MONTH + "%"} />
           <Infographic name="3 month" value={data?.BC_3MONTH + "%"} />
